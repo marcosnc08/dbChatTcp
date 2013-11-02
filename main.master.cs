@@ -5,11 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class salaDeEspera : System.Web.UI.Page
+public partial class main : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["conectado"] == null)
-            Response.Redirect("login.aspx");
+
     }
 }
