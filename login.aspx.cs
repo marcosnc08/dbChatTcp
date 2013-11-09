@@ -19,23 +19,22 @@ public partial class login : System.Web.UI.Page
         SqlConnection conn = new SqlConnection(connection);
 
         conn.Open();
-        string queryLog = "SELECT Login, Password FROM Usuario WHERE Login=@login and Password=@pass";
+        string queryLog = "SELECT Login, Password, UltimoAcceso, Administrador FROM Usuario WHERE Login=@login and Password=@pass";
 
         SqlCommand commandLog = new SqlCommand(queryLog, conn);
         commandLog.Parameters.AddWithValue("@login", txtUsuario.Text);
         commandLog.Parameters.AddWithValue("@pass", txtContra.Text);
 
         SqlDataReader reader = commandLog.ExecuteReader();
-
-
+        
         if (reader.HasRows)
         {
             usuario userLogin = new usuario();
             reader.Read();
             userLogin.login = reader["Login"].ToString();
             userLogin.password = reader["Password"].ToString();
-            //userLogin.administrador = (bool)reader["Administrador"];
-            //userLogin.ultimoAcceso = (DateTime)reader["UltimoAcceso"];
+            userLogin.administrador = (bool)reader["Administrador"];
+            userLogin.ultimoAcceso = (DateTime)reader["UltimoAcceso"];
 
             Session["conectado"] = userLogin;
             Response.Redirect("salaDeEspera.aspx");
