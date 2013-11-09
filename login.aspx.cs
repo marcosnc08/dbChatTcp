@@ -34,12 +34,23 @@ public partial class login : System.Web.UI.Page
             userLogin.login = reader["Login"].ToString();
             userLogin.password = reader["Password"].ToString();
             userLogin.administrador = (bool)reader["Administrador"];
-            userLogin.ultimoAcceso = (DateTime)reader["UltimoAcceso"];
+
+            conn.Close();
+            userLogin.ultimoAcceso = DateTime.Now;
+
+            conn.Open();
+            queryLog = "UPDATE usuario SET UltimoAcceso=@UltimoAcceso WHERE login=@login AND Password=@pass";
+            commandLog = new SqlCommand(queryLog, conn);
+            commandLog.Parameters.AddWithValue("@login", txtUsuario.Text);
+            commandLog.Parameters.AddWithValue("@pass", txtContra.Text);
+            commandLog.Parameters.AddWithValue("@UltimoAcceso", userLogin.ultimoAcceso);
+            commandLog.ExecuteNonQuery();
 
             Session["conectado"] = userLogin;
             Response.Redirect("salaDeEspera.aspx");
         }
 
+        conn.Close();
 
     }
 }
