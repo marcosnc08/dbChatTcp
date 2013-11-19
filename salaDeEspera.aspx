@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h2>Sala de espera</h2>
-    <asp:GridView ID="gvSalas" runat="server" onrowcommand="gvSalas_RowCommand" AutoGenerateColumns="false">
+    <asp:GridView ID="gvSalas" runat="server" onrowcommand="gvSalas_RowCommand" 
+        AutoGenerateColumns="false">
         <columns>
             <asp:TemplateField HeaderText="IdSala">
                 <ItemTemplate>

@@ -11,4 +11,9 @@ public partial class main : System.Web.UI.MasterPage
     {
 
     }
+    protected void btnLogOut_Click(object sender, EventArgs e)
+    {
+        Session["conectado"] = null;
+        Response.Redirect("~/login.aspx");
+    }
 }

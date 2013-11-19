@@ -34,7 +34,6 @@ public partial class salaDeEspera : System.Web.UI.Page
             string idSala = Convert.ToString(gvr.RowIndex);
 
             Response.Redirect("Chat.aspx?id=" + idSala);
-
         }
     }
 }
