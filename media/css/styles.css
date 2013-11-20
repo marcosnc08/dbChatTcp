@@ -18,6 +18,20 @@ body{
 	width: 70%;
 }
 
+.mensaje{
+	width: 100%;
+}
+
+.conver{
+	min-height: 500px;
+	width: 100%;
+}
+
+.mensaje-de-chat{
+	height: 80px;
+	width: 70%;
+}
+
 .centrado{
 	margin: 0 auto;
 }
@@ -47,6 +61,12 @@ h2{
 
 h3{
 	font-size: 150%;
+}
+
+/*USUARIOS CONECTADOS*/
+
+.usuarios{
+	padding-left: 20px;
 }
 
 /* SPANS */

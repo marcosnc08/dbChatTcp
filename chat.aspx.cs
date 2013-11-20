@@ -15,7 +15,7 @@ public partial class chat : System.Web.UI.Page
 
         string connection = "Data Source=.\\SQL2008R2;Initial Catalog=dbChat;User ID=sa;Password=1234";
         string query = "SELECT idMensaje, Login, IdSala, FechaHora, Texto FROM Mensaje WHERE IdSala=@idSala";
-        string query2 = "SELECT DISTINCT Login FROM Mensaje WHERE idSala=@idSala";
+        string query2 = "SELECT DISTINCT Login FROM Mensaje WHERE IdSala=@idSala";
         
         SqlConnection conn = new SqlConnection(connection);
         conn.Open();
