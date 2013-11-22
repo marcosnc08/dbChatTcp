@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
 public partial class login : System.Web.UI.Page
 {
@@ -68,8 +69,9 @@ public partial class login : System.Web.UI.Page
             string queryReg = "SELECT Login FROM Usuario WHERE Login=@login";
 
             SqlCommand commandReg = new SqlCommand(queryReg, conn);
-            commandReg.Parameters.Add("@login", txtUsuarioRegistro.Text);
+            commandReg.Parameters.AddWithValue("@login", txtUsuarioRegistro.Text);
 
+           
             SqlDataReader reader = commandReg.ExecuteReader();
             if (reader.HasRows)
             {
@@ -77,14 +79,16 @@ public partial class login : System.Web.UI.Page
             }
             else
             {
-                string queryRegistro = "INSERT INTO Usuario (Login, Password, UltimoAcceso, Administrador) VALUES (@login, @pass, @ultimoAcceso, @admin)";
+                conn.Close();
+                string queryRegistro = "INSERT INTO [dbChat].[dbo].[Usuario] (Login, Password, UltimoAcceso, Administrador) VALUES (@login, @pass, @ultimoAcceso, @admin)";
 
                 SqlCommand command = new SqlCommand(queryRegistro, conn);
                 command.Parameters.AddWithValue("@login", txtUsuarioRegistro.Text);
                 command.Parameters.AddWithValue("@pass", txtContraRegistro.Text);
                 command.Parameters.AddWithValue("@ultimoAcceso", DateTime.Now);
-                command.Parameters.AddWithValue("@admin", 0);
+                command.Parameters.AddWithValue("@admin", false);
 
+                conn.Open();
                 command.ExecuteNonQuery();
                 lblLogRegistro.Text = "Se registro al usuario correctamente.";
             }

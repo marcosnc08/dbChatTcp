@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="span1 left">Usuario:</div>
                     <div class="span1 right">
-                        <asp:TextBox ID="txtUsuario" CssClass="rounded-corners-2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtUsuario" CssClass="rounded-corners-2" runat="server" TextMode="SingleLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rVlUsuario" runat="server" 
                             ErrorMessage="Ingrese usuario" ControlToValidate="txtUsuario" 
                             ValidationGroup="ingresar"></asp:RequiredFieldValidator>
@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="span1 left">Contraseña:</div> 
                     <div class="span1 right">
-                        <asp:TextBox ID="txtContra" CssClass="rounded-corners-2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContra" CssClass="rounded-corners-2" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rVlContra" runat="server" 
                             ErrorMessage="Ingrese contraseña" ControlToValidate="txtContra" 
                             ValidationGroup="ingresar"></asp:RequiredFieldValidator>
@@ -56,14 +56,14 @@
                 <div class="row">
                     <div class="span1 left">Contraseña: </div>
                     <div class="span1 right">
-                        <asp:TextBox ID="txtContraRegistro" CssClass="rounded-corners-2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContraRegistro" CssClass="rounded-corners-2" runat="server" TextMode="Password"></asp:TextBox>
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="span1 left">Repetir contraseña: </div>
                     <div class="span1 right">
-                    <asp:TextBox ID="txtContraRegistroVerificacion" CssClass="rounded-corners-2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtContraRegistroVerificacion" CssClass="rounded-corners-2" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:CompareValidator ID="cmpContra" runat="server" ErrorMessage="No coinciden las contraseñas." 
                             ControlToValidate="txtContraRegistroVerificacion" 
                             ControlToCompare="txtContraRegistro" ValidationGroup="registro"></asp:CompareValidator>

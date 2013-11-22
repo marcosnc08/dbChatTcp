@@ -11,9 +11,6 @@ public partial class salaDeEspera : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["conectado"] == null)
-            //Response.Redirect("login.aspx");
-
         string connection = "Data Source=.\\SQL2008R2;Initial Catalog=dbChat;User ID=sa;Password=1234";
         string query = "SELECT idSala, Descripcion FROM Sala";
         
