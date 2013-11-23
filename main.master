@@ -22,13 +22,6 @@
             
             </div>
 
-            <nav>
-                <ul>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </nav>
-
             <div><asp:Button ID="btnLogOut" runat="server" Text="Salir" 
                     onclick="btnLogOut_Click"/></div>
         

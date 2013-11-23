@@ -45,8 +45,5 @@
                 <asp:AsyncPostBackTrigger ControlID="Timer1" />
             </Triggers>
         </asp:UpdatePanel>
-        
     </div>  
 </asp:Content>
-
-

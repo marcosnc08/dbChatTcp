@@ -5,8 +5,7 @@
 <head runat="server">
     <title>Sala de Chat - Login</title>
     <link rel="Stylesheet" href="media/css/styles.css" type="text/css"/>
-    <link rel="Stylesheet" href="media/css/cupertino/jquery-ui-1.10.3.custom.min.css"
-        type="text/css" />
+    <link rel="Stylesheet" href="media/css/cupertino/jquery-ui-1.10.3.custom.min.css" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
